@@ -1,0 +1,15 @@
+allUsers: All users
+users: Users
+location: Location
+website: Website
+company: Company
+todos: Todos
+posts: Posts
+albums: Albums
+goHome: Go Home
+signIn: Sign In
+username: Username
+email: Email
+buttons:
+  send: Send
+  cancel: Cancel

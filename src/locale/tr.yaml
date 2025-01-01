@@ -1,0 +1,14 @@
+allUsers: Tüm kullanıcılar
+users: Kullanıcılar
+location: Lokasyon
+website: Website
+company: Şirket
+todos: Görevler
+posts: Gönderiler
+albums: Albümler
+goHome: Anasayfaya Dön
+signIn: Giriş Yap
+username: Kullanıcı Adı
+email: E-posta
+buttons:
+  submit: Gönder
