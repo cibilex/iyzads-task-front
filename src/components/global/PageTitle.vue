@@ -1,12 +1,6 @@
 <template>
   <div class="flex justify-between items-center pr-7">
     <div class="flex items-center gap-15px">
-      <!-- <router-link
-          v-if="prevBtn"
-          :to="{ name: 'users' }"
-          class="i-tabler:square-rounded-arrow-left duration-200 hover:scale-105 active:scale-97"
-        ></router-link> -->
-
       <h1 class="font-semibold text-xl leading-none text-title dark:text-dark-title pl-9px">
         {{ t(title) }}
       </h1>

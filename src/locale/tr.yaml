@@ -2,6 +2,9 @@ allUsers: Tüm kullanıcılar
 users: Kullanıcılar
 location: Lokasyon
 website: Website
+userTypes:
+  1: Kullanıcı
+  2: Admin
 company: Şirket
 todos: Görevler
 posts: Gönderiler
@@ -10,5 +13,19 @@ goHome: Anasayfaya Dön
 signIn: Giriş Yap
 username: Kullanıcı Adı
 email: E-posta
+password: Şifre
+rememberMe: Beni Hatırla
+error: Hata
+sucess: Başarılı
+completed: İşlem tamamlandı
+boookstores: Kitapçılar
+books: Kitaplar
+permissions: İzinler
 buttons:
   submit: Gönder
+
+validations:
+  min: '{field} en az {minimum} karakter olmalıdır.'
+  max: '{field} en fazla {maximum} karakter olmalıdır.'
+  email: 'Geçerli bir e-posta adresi giriniz.'
+  required: '{field} zorunludur.'

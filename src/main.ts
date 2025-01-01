@@ -1,6 +1,7 @@
 import 'virtual:uno.css'
 import './assets/scss/main.scss'
 import '@unocss/reset/tailwind.css'
+import 'primeicons/primeicons.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -27,6 +28,10 @@ import Message from 'primevue/message'
 import Card from 'primevue/card'
 import Input from '@/components/global/Input.vue'
 import FloatLabel from 'primevue/floatlabel'
+import Checkbox from 'primevue/checkbox'
+import ToastService from 'primevue/toastservice'
+import Toast from 'primevue/toast'
+import Tag from 'primevue/tag'
 
 const app = createApp(App)
 app
@@ -39,6 +44,7 @@ app
       },
     },
   })
+  .use(ToastService)
   .component('Button', Button)
   .component('ColorPicker', ColorPicker)
   .component('Loader', Loader)
@@ -56,6 +62,9 @@ app
   .component('Card', Card)
   .component('Input', Input)
   .component('FloatLabel', FloatLabel)
+  .component('Checkbox', Checkbox)
+  .component('Toast', Toast)
+  .component('Tag', Tag)
   .use(i18n)
   .use(router)
 

@@ -1,12 +1,16 @@
 <template>
   <div class="flex flex-col gap-1">
     <FloatLabel variant="on">
-      <InputText :id="uniqueId" v-model="model" :type fluid />
+      <InputText :name="field" :id="uniqueId" v-model="model" :type fluid />
       <label :for="uniqueId">{{ t(label) }}</label>
     </FloatLabel>
 
     <Message v-if="form[field]?.invalid" severity="error" size="small" variant="simple">{{
-      form[field].error?.message
+      t(form[field].error?.message, {
+        field: t(label),
+        minimum: form[field].error?.minimum,
+        maximum: form[field].error?.maximum,
+      })
     }}</Message>
   </div>
 </template>

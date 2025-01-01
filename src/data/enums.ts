@@ -1,3 +1,5 @@
+import { UserTypes } from '@/types/user.interface'
+
 export enum LocalItems {
   LANG = 'lng',
   THEME = 'thm',

@@ -2,6 +2,9 @@ allUsers: All users
 users: Users
 location: Location
 website: Website
+userTypes:
+  1: User
+  2: Admin
 company: Company
 todos: Todos
 posts: Posts
@@ -10,6 +13,19 @@ goHome: Go Home
 signIn: Sign In
 username: Username
 email: Email
+password: Password
+rememberMe: Remember Me
+error: Error
+success: Success
+completed: Operation completed
+bookstores: Bookstores
+books: Books
+permissions: Permissions
 buttons:
   send: Send
   cancel: Cancel
+validations:
+  min: '{field} must be at least {minimum} characters.'
+  max: '{field} must be at most {maximum} characters.'
+  email: 'Please enter a valid email address.'
+  required: '{field} is required.'

@@ -1,45 +1,39 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { LocalItems } from '@/data/enums'
+import { useMetaStore } from './meta'
+import { useRouter } from 'vue-router'
+import { type User } from '@/types/user.interface'
 
 export const useUserStore = defineStore('user', () => {
-  const user = ref({})
+  const user = ref<User | null>(null)
   const logined = ref(false)
+  const metaStore = useMetaStore()
+  const router = useRouter()
 
-  // const getUserInfo = async (store: string) => {
-  //   const s = store || 'my'
-  //   try {
-  //     // const infoRes = await services.userSetting({ store: s })
+  const getUserInfo = async () => {
+    const res = (await metaStore.safeRequest('get', '/user/profile', {}, false)) as User
+    user.value = res
+    return !!res
+  }
 
-  //     // this.user = new UserModel({ ...infoRes.data.data, tags: tagsRes })
+  const logout = async (withoutNavigation?: boolean) => {
+    if (logined.value) {
+      await metaStore.safeRequest('post', '/user/logout')
+    }
 
-  //     return true
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
+    localStorage.removeItem(LocalItems.ACCESS_TOKEN)
+    logined.value = false
+    user.value = null
+    if (!withoutNavigation || typeof withoutNavigation !== 'boolean') {
+      router.replace('/login')
+    }
+  }
 
-  //   const logout = async (withoutNavigation: boolean) => {
-  //     if (logined.value) {
-  //       try {
-  //         // await services.userLogout({})
-  //       } catch (error) {}
-  //     }
-  //     // if (local.getItem(localItems.tkn)) {
-  //     //   box.addSuccess(i18n.t('toast.success'), i18n.t('api.logout'))
-  //     // }
-
-  //     // setTimeout(() => closeAllDialog(), 200)
-  //     logined.value = false
-  //     // if (!withoutNavigation || typeof withoutNavigation !== 'boolean') {
-  //     //   this.router.replace('/login')
-  //     // }
-  //   }
-
-  //   const addLoginData = (token: string) => {
-  //     logined.value = true
-  //     localStorage.setItem(LocalItems.ACCESS_TOKEN, token)
-  //   }
-  // }
+  const addLoginData = (token: string) => {
+    logined.value = true
+    localStorage.setItem(LocalItems.ACCESS_TOKEN, token)
+  }
 
   // const controlPermission = (perm: string) => {
   //   try {
@@ -52,5 +46,8 @@ export const useUserStore = defineStore('user', () => {
   return {
     logined,
     user,
+    addLoginData,
+    getUserInfo,
+    logout,
   }
 })

@@ -17,6 +17,7 @@
 
     <router-view />
   </Page>
+  <Toast />
 </template>
 
 <script setup lang="ts">
@@ -32,18 +33,18 @@ const userStore = useUserStore()
 const links: { icon: string; text: string; link: RouteLocationRaw }[] = [
   {
     icon: 'i-tabler:checkup-list',
-    text: 'todos',
-    link: { name: 'users-id-todos' },
+    text: 'bookstores',
+    link: { name: 'bookstores' },
   },
   {
     icon: 'i-tabler:notebook',
-    text: 'posts',
-    link: { name: 'users-id-posts' },
+    text: 'users',
+    link: { name: 'users' },
   },
   {
     icon: 'i-tabler:photo-heart',
-    text: 'albums',
-    link: { name: 'users-id-albums' },
+    text: 'permissions',
+    link: { name: 'permissions' },
   },
 ]
 const metaStore = useMetaStore()
