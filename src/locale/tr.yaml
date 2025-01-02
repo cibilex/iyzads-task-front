@@ -3,6 +3,11 @@ users: Kullanıcılar
 location: Lokasyon
 active: Aktif
 passive: Passive
+price: Fiyat
+title: Başlık
+areYouSure: Emin misiniz?
+confirmToDeleteBook: Bu kitabı silmek istediğinizden emin misiniz?
+description: Açıklama
 website: Website
 userType: Kullanıcı tipi
 createdAt: Oluşturulma tarihi
@@ -25,6 +30,7 @@ sucess: Başarılı
 completed: İşlem tamamlandı
 boookstores: Kitapçılar
 books: Kitaplar
+bookTitle: Kitap Adı
 permissions: İzinler
 buttons:
   send: Gönder
@@ -33,6 +39,8 @@ buttons:
   createUser: Kullanıcı Oluştur
   deleteUser: Kullanıcı sil
   create: Oluştur
+  createBook: Kitap Oluştur
+  delete: Sil
 
 validations:
   min: '{field} en az {minimum} karakter olmalıdır.'

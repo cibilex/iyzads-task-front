@@ -1,7 +1,15 @@
 <template>
   <div class="flex flex-col gap-1">
     <FloatLabel variant="on">
-      <InputText :name="field" :id="uniqueId" v-model.trim="model" :type fluid />
+      <InputNumber
+        :minFractionDigits="2"
+        :maxFractionDigits="2"
+        fluid
+        :name="field"
+        :id="uniqueId"
+        v-model="model"
+      />
+
       <label :for="uniqueId">{{ t(label) }}</label>
     </FloatLabel>
 
@@ -21,17 +29,14 @@ import { useI18n } from 'vue-i18n'
 import { v4 } from 'uuid'
 const uniqueId = v4()
 
-const model = defineModel() as ModelRef<string>
+const model = defineModel() as ModelRef<number>
 const props = withDefaults(
   defineProps<{
-    type?: string
     field: string
     form: any
     label: string
   }>(),
-  {
-    type: 'text',
-  },
+  {},
 )
 const { t } = useI18n()
 </script>

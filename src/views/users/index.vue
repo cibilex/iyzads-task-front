@@ -28,11 +28,10 @@
       <Column field="updatedAt" :header="t('updatedAt')">
         <template #body="{ data, field }"> {{ formatDate(data[field]) }}</template></Column
       >
-      <Column header="">
-        <!-- <Button type="submit" :label="t(successBtn)"></Button> -->
-      </Column>
+      <Column header=""> </Column>
     </CommonTable>
-    <CreateUserDialog @created="created" :loadings v-model="visible" />
+    {{ visible }}
+    <CreateUserDialog @created="created" :loadings v-model="visible" v-if="visible" />
   </PageContent>
 </template>
 
@@ -40,8 +39,6 @@
 import { ref, onMounted, computed, reactive } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useMetaStore } from '@/stores/meta'
-import { useUserStore } from '@/stores/user'
-import { useRouter } from 'vue-router'
 import CreateUserDialog from '@/views/users/components/CreateUserDialog.vue'
 import type { User } from '@/types/user.interface'
 import { formatDate } from '@/lib/utils'
@@ -49,8 +46,6 @@ import { commonStatuses, userStatuses } from '@/data/enums'
 
 const { t } = useI18n()
 const metaStore = useMetaStore()
-const userStore = useUserStore()
-const router = useRouter()
 const loadings = reactive({
   get: false,
   create: false,
@@ -61,7 +56,7 @@ const userStatus = computed(() => (data: User) => commonStatuses[data.status])
 const userType = computed(() => (data: User) => userStatuses[data.type])
 const created = (user: User) => {
   visible.value = false
-  users.value.push(user)
+  users.value.unshift(user)
 }
 
 const openDialog = () => {

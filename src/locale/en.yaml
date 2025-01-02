@@ -3,6 +3,11 @@ users: Users
 location: Location
 active: Active
 passive: Passive
+price: Price
+title: Title
+areYouSure: Are you sure?
+confirmToDeleteBook: Are you sure you want to delete this book?
+description: Description
 website: Website
 userType: User type
 createdAt: Create date
@@ -25,6 +30,7 @@ success: Success
 completed: Operation completed
 bookstores: Bookstores
 books: Books
+bookTitle: Book Title
 permissions: Permissions
 buttons:
   send: Send
@@ -33,8 +39,11 @@ buttons:
   createUser: Create User
   deleteUser: Delete User
   create: Create
+  createBook: Create Book
+  delete: Delete
 validations:
   min: '{field} must be at least {minimum} characters.'
+
   max: '{field} must be at most {maximum} characters.'
   email: 'Please enter a valid email address.'
   required: '{field} is required.'

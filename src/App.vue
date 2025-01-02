@@ -45,6 +45,11 @@ const links: { icon: string; text: string; link: RouteLocationRaw }[] = [
     text: 'permissions',
     link: { name: 'permissions' },
   },
+  {
+    icon: 'i-tabler:photo-heart',
+    text: 'books',
+    link: { name: 'books' },
+  },
 ]
 const metaStore = useMetaStore()
 

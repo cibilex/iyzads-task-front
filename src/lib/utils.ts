@@ -18,3 +18,16 @@ export const formatDate = (date: number, full = true, seconds = false) => {
   }
   return net
 }
+
+export const getPrice = (p: number) => {
+  if (isNaN(p)) return ''
+  const price = Number(p / 100).toLocaleString('en-US')
+
+  if (price.includes('.')) {
+    const [int, dec] = price.split('.')
+    if (dec.length == 2) return price
+    else if (dec.length == 1) return price + '0'
+    else if (dec.length > 2) return int + '.' + dec.substring(0, 2)
+  }
+  return price + '.00'
+}

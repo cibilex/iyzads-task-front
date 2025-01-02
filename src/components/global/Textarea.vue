@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-1">
     <FloatLabel variant="on">
-      <InputText :name="field" :id="uniqueId" v-model.trim="model" :type fluid />
+      <textareaTag autoResize rows="5" :name="field" :id="uniqueId" v-model="model" :type fluid />
       <label :for="uniqueId">{{ t(label) }}</label>
     </FloatLabel>
 

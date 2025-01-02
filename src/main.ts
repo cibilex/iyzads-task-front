@@ -43,6 +43,12 @@ import Tab from 'primevue/tab'
 import TabPanels from 'primevue/tabpanels'
 import TabPanel from 'primevue/tabpanel'
 import ToggleSwitch from 'primevue/toggleswitch'
+import TextareaTag from 'primevue/textarea'
+import Textarea from '@/components/global/Textarea.vue'
+import InputNumber from 'primevue/inputnumber'
+import NumberInput from '@/components/global/NumberInput.vue'
+import ConfirmDialog from 'primevue/confirmdialog'
+import ConfirmationService from 'primevue/confirmationservice'
 
 const app = createApp(App)
 app
@@ -56,6 +62,7 @@ app
     },
   })
   .use(ToastService)
+  .use(ConfirmationService)
   .component('Button', Button)
   .component('ColorPicker', ColorPicker)
   .component('Loader', Loader)
@@ -87,6 +94,11 @@ app
   .component('TabPanels', TabPanels)
   .component('TabPanel', TabPanel)
   .component('ToggleSwitch', ToggleSwitch)
+  .component('TextareaTag', TextareaTag)
+  .component('Textarea', Textarea)
+  .component('InputNumber', InputNumber)
+  .component('NumberInput', NumberInput)
+  .component('ConfirmDialog', ConfirmDialog)
   .use(i18n)
   .use(router)
 

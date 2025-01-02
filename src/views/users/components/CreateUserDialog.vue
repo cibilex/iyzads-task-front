@@ -46,23 +46,40 @@ import type { User } from '@/types/user.interface'
 import { useI18n } from 'vue-i18n'
 import { useUserStore } from '@/stores/user'
 
+class FormData {
+  username: string
+  password: string
+  permissions: Record<string, Record<string, boolean>>
+  activeTab: string
+  constructor() {
+    this.username = ''
+    this.password = ''
+    this.permissions = {}
+    this.activeTab = permissions.value[0] || ''
+
+    for (const page of Object.keys(userStore.user!.allPermissions)) {
+      if (!this.permissions[page]) {
+        this.permissions[page] = {}
+      }
+      for (const perm of Object.keys(userStore.user!.allPermissions[page].perms)) {
+        this.permissions[page][perm] = false
+      }
+    }
+  }
+}
+const permissions = computed(() => Object.keys(userStore.user?.allPermissions || []))
+
+const userStore = useUserStore()
 const metaStore = useMetaStore()
 const { t } = useI18n()
-const userStore = useUserStore()
+const formData = ref(new FormData())
+
 const props = defineProps<{
   loadings: {
     get: boolean
     create: boolean
   }
 }>()
-
-const permissions = computed(() => Object.keys(userStore.user?.allPermissions || []))
-const formData = ref({
-  username: '',
-  password: '',
-  activeTab: '',
-  permissions: {} as Record<string, Record<string, boolean>>,
-})
 
 const emits = defineEmits<{
   created: [user: User]
@@ -111,16 +128,4 @@ const onFormSubmit = async (valid: boolean) => {
   }
   props.loadings.create = false
 }
-
-onMounted(() => {
-  formData.value.activeTab = permissions.value[0] || ''
-  for (const page of Object.keys(userStore.user!.allPermissions)) {
-    if (!formData.value.permissions[page]) {
-      formData.value.permissions[page] = {}
-    }
-    for (const perm of Object.keys(userStore.user!.allPermissions[page].perms)) {
-      formData.value.permissions[page][perm] = false
-    }
-  }
-})
 </script>
