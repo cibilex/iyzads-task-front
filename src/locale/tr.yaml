@@ -4,9 +4,12 @@ location: Lokasyon
 active: Aktif
 passive: Passive
 price: Fiyat
+country: Ülke
+city: Şehir
 title: Başlık
 areYouSure: Emin misiniz?
 confirmToDeleteBook: Bu kitabı silmek istediğinizden emin misiniz?
+confirmToDeleteBookstore: Bu kitapçıyı silmek istediğinizden emin misiniz?
 description: Açıklama
 website: Website
 userType: Kullanıcı tipi
@@ -28,9 +31,10 @@ rememberMe: Beni Hatırla
 error: Hata
 sucess: Başarılı
 completed: İşlem tamamlandı
-boookstores: Kitapçılar
+bookstores: Kitapçılar
 books: Kitaplar
 bookTitle: Kitap Adı
+bookstoreTitle: Kitaçı Adı
 permissions: İzinler
 buttons:
   send: Gönder
@@ -40,6 +44,7 @@ buttons:
   deleteUser: Kullanıcı sil
   create: Oluştur
   createBook: Kitap Oluştur
+  createBookstore: Kitapçı Oluştur
   delete: Sil
 
 validations:

@@ -4,9 +4,12 @@ location: Location
 active: Active
 passive: Passive
 price: Price
+country: Country
+city: City
 title: Title
 areYouSure: Are you sure?
 confirmToDeleteBook: Are you sure you want to delete this book?
+confirmToDeleteBookstore: Are you sure you want to delete this bookstore?
 description: Description
 website: Website
 userType: User type
@@ -31,6 +34,7 @@ completed: Operation completed
 bookstores: Bookstores
 books: Books
 bookTitle: Book Title
+bookstoreTitle: Bookstore title
 permissions: Permissions
 buttons:
   send: Send
@@ -40,6 +44,7 @@ buttons:
   deleteUser: Delete User
   create: Create
   createBook: Create Book
+  createBookstore: Create Book
   delete: Delete
 validations:
   min: '{field} must be at least {minimum} characters.'
