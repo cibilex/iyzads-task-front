@@ -1,12 +1,8 @@
 <template>
-  <div>
-    <div class="px-4 pt-10 h-full bg-white dark:bg-dark-bg">
-      <div class="overflow-scroll h-full">
-        <Loader v-if="loading" />
+  <div class="px-4 pt-10 h-full flex flex-col bg-white dark:bg-dark-bg">
+    <Loader v-if="loading" />
 
-        <slot v-else />
-      </div>
-    </div>
+    <slot v-else />
   </div>
 </template>
 

@@ -64,7 +64,9 @@ const resolver = ref(
 )
 
 const onFormSubmit = async ({ valid }: { valid: boolean }) => {
-  if (formData.value.loading) return
+  if (formData.value.loading) {
+    return
+  }
   if (valid) {
     const { username, password, rememberMe } = formData.value
     const res = await metaStore.safeRequest<{

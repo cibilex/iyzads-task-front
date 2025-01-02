@@ -29,7 +29,6 @@ import { type RouteLocationRaw } from 'vue-router'
 import Avatar from '@/components/global/Avatar.vue'
 import { useUserStore } from '@/stores/user'
 const userStore = useUserStore()
-
 const links: { icon: string; text: string; link: RouteLocationRaw }[] = [
   {
     icon: 'i-tabler:checkup-list',

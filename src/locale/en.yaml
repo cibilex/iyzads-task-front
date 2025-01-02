@@ -1,10 +1,15 @@
 allUsers: All users
 users: Users
 location: Location
+active: Active
+passive: Passive
 website: Website
+userType: User type
+createdAt: Create date
+updatedAt: update date
 userTypes:
-  1: User
-  2: Admin
+  1: Admin
+  2: User
 company: Company
 todos: Todos
 posts: Posts
@@ -24,6 +29,10 @@ permissions: Permissions
 buttons:
   send: Send
   cancel: Cancel
+  submit: Submit
+  createUser: Create User
+  deleteUser: Delete User
+  create: Create
 validations:
   min: '{field} must be at least {minimum} characters.'
   max: '{field} must be at most {maximum} characters.'

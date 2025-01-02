@@ -9,6 +9,7 @@ import axios from '@/lib/axios'
 
 export const useMetaStore = defineStore('meta', () => {
   const theme = ref(Themes.DARK)
+  const dialog = ref(false)
   const { locale, t } = useI18n()
   const dropdownStore = useDropdownStore()
   const toast = useToast()
@@ -56,5 +57,5 @@ export const useMetaStore = defineStore('meta', () => {
     }
   }
 
-  return { theme, changeTheme, setLocale, safeRequest }
+  return { theme, changeTheme, setLocale, dialog, safeRequest }
 })

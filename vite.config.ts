@@ -11,7 +11,6 @@ import { resolve } from 'node:path'
 export default defineConfig({
   plugins: [
     vue(),
-    vueDevTools(),
     Pages({
       dirs: 'src/views',
     }),

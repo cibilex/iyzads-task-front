@@ -1,10 +1,15 @@
 allUsers: Tüm kullanıcılar
 users: Kullanıcılar
 location: Lokasyon
+active: Aktif
+passive: Passive
 website: Website
+userType: Kullanıcı tipi
+createdAt: Oluşturulma tarihi
+updatedAt: Güncelleme tarihi
 userTypes:
-  1: Kullanıcı
-  2: Admin
+  1: Admin
+  2: Kullanıcı
 company: Şirket
 todos: Görevler
 posts: Gönderiler
@@ -22,7 +27,12 @@ boookstores: Kitapçılar
 books: Kitaplar
 permissions: İzinler
 buttons:
+  send: Gönder
+  cancel: İptal
   submit: Gönder
+  createUser: Kullanıcı Oluştur
+  deleteUser: Kullanıcı sil
+  create: Oluştur
 
 validations:
   min: '{field} en az {minimum} karakter olmalıdır.'

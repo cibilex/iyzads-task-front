@@ -1,7 +1,9 @@
+import type { CommonTableStatuses } from './common.types'
+
 export type Permission = Record<
   string,
   {
-    perms: Record<string, { t: string; v: number; id: number }>
+    perms: Record<string, { v: number; id: number }>
     id: number
   }
 >
@@ -16,4 +18,5 @@ export interface User {
   allPermissions: Permission
   username: string
   type: UserTypes
+  status: CommonTableStatuses
 }

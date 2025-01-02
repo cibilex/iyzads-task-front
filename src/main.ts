@@ -32,6 +32,17 @@ import Checkbox from 'primevue/checkbox'
 import ToastService from 'primevue/toastservice'
 import Toast from 'primevue/toast'
 import Tag from 'primevue/tag'
+import CommonDialog from '@/components/global/CommonDialog.vue'
+import DataTable from 'primevue/datatable'
+import Column from 'primevue/column'
+import CommonTable from '@/components/global/CommonTable.vue'
+import Dialog from 'primevue/dialog'
+import Tabs from 'primevue/tabs'
+import TabList from 'primevue/tablist'
+import Tab from 'primevue/tab'
+import TabPanels from 'primevue/tabpanels'
+import TabPanel from 'primevue/tabpanel'
+import ToggleSwitch from 'primevue/toggleswitch'
 
 const app = createApp(App)
 app
@@ -65,6 +76,17 @@ app
   .component('Checkbox', Checkbox)
   .component('Toast', Toast)
   .component('Tag', Tag)
+  .component('CommonDialog', CommonDialog)
+  .component('DataTable', DataTable)
+  .component('Column', Column)
+  .component('CommonTable', CommonTable)
+  .component('Dialog', Dialog)
+  .component('Tabs', Tabs)
+  .component('TabList', TabList)
+  .component('Tab', Tab)
+  .component('TabPanels', TabPanels)
+  .component('TabPanel', TabPanel)
+  .component('ToggleSwitch', ToggleSwitch)
   .use(i18n)
   .use(router)
 

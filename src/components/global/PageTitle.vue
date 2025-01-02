@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-center pr-7">
+  <div class="flex justify-between grow-0 shrink-0 items-center pr-7">
     <div class="flex items-center gap-15px">
       <h1 class="font-semibold text-xl leading-none text-title dark:text-dark-title pl-9px">
         {{ t(title) }}
