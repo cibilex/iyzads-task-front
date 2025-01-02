@@ -4,7 +4,7 @@
     <CommonTable @clicked="openDialog" btnText="buttons.createBookstore" :items="books">
       <Column field="title" :header="t('bookTitle')"></Column>
 
-      <Column header="Status">
+      <Column :header="t('status')">
         <template #body="{ data }">
           <Tag
             v-if="userStatus(data)"

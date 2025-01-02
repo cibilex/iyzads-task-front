@@ -3,6 +3,7 @@ users: Users
 location: Location
 active: Active
 passive: Passive
+status: Status
 price: Price
 country: Country
 city: City

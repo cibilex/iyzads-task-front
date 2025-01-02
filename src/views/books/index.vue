@@ -4,13 +4,13 @@
     <CommonTable @clicked="openDialog" btnText="buttons.createBook" :items="books">
       <Column field="title" :header="t('bookTitle')"></Column>
 
-      <Column header="price">
+      <Column :header="t('price')">
         <template #body="{ data }">
           {{ getPrice(data.price) }}
         </template>
       </Column>
 
-      <Column header="Status">
+      <Column :header="t('status')">
         <template #body="{ data }">
           <Tag
             v-if="userStatus(data)"

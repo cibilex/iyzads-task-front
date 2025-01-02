@@ -3,6 +3,7 @@ users: Kullanıcılar
 location: Lokasyon
 active: Aktif
 passive: Passive
+status: Durum
 price: Fiyat
 country: Ülke
 city: Şehir

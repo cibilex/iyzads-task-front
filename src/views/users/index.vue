@@ -3,7 +3,7 @@
     <PageTitle title="users" />
     <CommonTable @clicked="openDialog" btnText="buttons.createUser" :items="users">
       <Column field="username" :header="t('username')"></Column>
-      <Column header="Status">
+      <Column :header="t('status')">
         <template #body="{ data }">
           <Tag
             v-if="userStatus(data)"
