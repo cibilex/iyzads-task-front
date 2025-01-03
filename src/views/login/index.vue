@@ -42,8 +42,8 @@ const metaStore = useMetaStore()
 const userStore = useUserStore()
 const router = useRouter()
 const formData = ref({
-  username: 'iyzads_admin',
-  password: 'ash8los2bahKauxae3ieth3shaarahc6',
+  username: '',
+  password: '',
   loading: false,
   rememberMe: false,
 })

@@ -16,7 +16,13 @@
         t('userTypes.' + userStore.user.type)
       }}</span>
     </div>
-    <Button severity="secondary" @click="logout" icon="pi pi-sign-out" variant="outlined" />
+    <Button
+      severity="secondary"
+      class="ml-auto"
+      @click="logout"
+      icon="pi pi-sign-out"
+      variant="outlined"
+    />
   </div>
 </template>
 
