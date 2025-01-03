@@ -11,7 +11,7 @@ const router = createRouter({
 
 router.beforeEach(async (to, from) => {
   const userStore = useUserStore()
-  const { getUserInfo, logout } = userStore
+  const { getUserInfo, controlPermission, logout } = userStore
   const { logined, user } = storeToRefs(userStore)
 
   if (!logined.value) {
@@ -31,25 +31,19 @@ router.beforeEach(async (to, from) => {
         }
       }
 
-      // if ('permissions' in to.meta) {
-      //   let canJoinPage = false
-      //   for (const permission of to.meta.permissions) {
-      //     const res = controlPermission(permission)
-      //     if (res) {
-      //       canJoinPage = true
-      //       break
-      //     }
-      //   }
-      //   if (!canJoinPage) {
-      //     box.addError('Error', 'Unauthorized access!')
-      //     return '/my'
-      //   }
-      // }
+      if ('permissions' in to.meta) {
+        for (const permission of to.meta.permissions as string[]) {
+          const res = controlPermission(permission)
+          if (!res) {
+            return '/'
+          }
+        }
+      }
     } else {
       return '/login'
     }
   } else if (to.meta.public && logined.value) {
-    return '/bookstores'
+    return '/'
   }
 })
 

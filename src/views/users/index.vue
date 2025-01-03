@@ -1,7 +1,12 @@
 <template>
   <PageContent :loading="loadings.get">
     <PageTitle title="users" />
-    <CommonTable @clicked="openDialog" btnText="buttons.createUser" :items="users">
+    <CommonTable
+      permission="user.create"
+      @clicked="openDialog"
+      btnText="buttons.createUser"
+      :items="users"
+    >
       <Column field="username" :header="t('username')"></Column>
       <Column :header="t('status')">
         <template #body="{ data }">
@@ -30,7 +35,6 @@
       >
       <Column header=""> </Column>
     </CommonTable>
-    {{ visible }}
     <CreateUserDialog @created="created" :loadings v-model="visible" v-if="visible" />
   </PageContent>
 </template>
@@ -78,3 +82,8 @@ onMounted(() => {
   getUsers()
 })
 </script>
+
+<route lang="yaml">
+meta:
+  permissions: ['user.list']
+</route>

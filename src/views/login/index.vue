@@ -16,7 +16,7 @@
               <Input field="username" label="username" :form="$form" v-model="formData.username" />
               <Input field="password" label="password" :form="$form" v-model="formData.password" />
               <div class="flex items-center gap-2">
-                <Checkbox v-model="formData.rememberMe" id="rememberMe" />
+                <Checkbox v-model="formData.rememberMe" binary />
                 <label for="rememberMe"> {{ t('rememberMe') }} </label>
               </div>
               <Button type="submit" severity="secondary" :label="t('buttons.submit')" />
@@ -79,7 +79,7 @@ const onFormSubmit = async ({ valid }: { valid: boolean }) => {
 
     if (res) {
       userStore.addLoginData(res.accessToken)
-      router.push({ name: 'bookstores' })
+      router.push({ name: 'index' })
     }
   }
 }

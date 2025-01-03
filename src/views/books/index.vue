@@ -1,7 +1,12 @@
 <template>
   <PageContent :loading="loadings.get">
     <PageTitle title="books" />
-    <CommonTable @clicked="openDialog" btnText="buttons.createBook" :items="books">
+    <CommonTable
+      permission="book.create"
+      @clicked="openDialog"
+      btnText="buttons.createBook"
+      :items="books"
+    >
       <Column field="title" :header="t('bookTitle')"></Column>
 
       <Column :header="t('price')">
@@ -26,7 +31,7 @@
       <Column field="updatedAt" :header="t('updatedAt')">
         <template #body="{ data, field }"> {{ formatDate(data[field]) }}</template></Column
       >
-      <Column header="">
+      <Column v-if="userStore.controlPermission('book.delete')" header="">
         <template #body="{ data }">
           <Button
             icon="pi pi-times"
@@ -75,7 +80,6 @@
 import { ref, onMounted, computed, reactive } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useMetaStore } from '@/stores/meta'
-import { useUserStore } from '@/stores/user'
 import { useRouter } from 'vue-router'
 import { formatDate } from '@/lib/utils'
 import { commonStatuses } from '@/data/enums'
@@ -83,10 +87,12 @@ import CreateBookDialog from '@/views/books/components/CreateBookDialog.vue'
 import type { Book } from '@/types/book.interface'
 import { getPrice } from '@/lib/utils'
 import { useConfirm } from 'primevue/useconfirm'
+import { useUserStore } from '@/stores/user'
 
 const { t } = useI18n()
 const confirm = useConfirm()
 const metaStore = useMetaStore()
+const userStore = useUserStore()
 const loadings = reactive({
   get: false,
   create: false,
@@ -140,3 +146,8 @@ onMounted(() => {
   getUsers()
 })
 </script>
+
+<route lang="yaml">
+meta:
+  permissions: ['book.list']
+</route>

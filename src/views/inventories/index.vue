@@ -2,6 +2,7 @@
   <PageContent :loading="loadings.get">
     <PageTitle title="inventories" />
     <CommonTable
+      permission="inventory.create"
       editMode="cell"
       @cell-edit-complete="editQuantity"
       @clicked="openDialog"
@@ -19,7 +20,10 @@
       </Column>
 
       <Column field="quantity" :header="t('quantity')">
-        <template #editor="{ data, field }">
+        <template
+          v-if="userStore.controlPermission('inventory.updateQuantity')"
+          #editor="{ data, field }"
+        >
           <NumberInput
             class="max-w-24"
             field="quantity"
@@ -45,7 +49,7 @@
       <Column field="updatedAt" :header="t('updatedAt')">
         <template #body="{ data, field }"> {{ formatDate(data[field]) }}</template></Column
       >
-      <Column header="">
+      <Column v-if="userStore.controlPermission('inventory.delete')" header="">
         <template #body="{ data }">
           <Button
             icon="pi pi-times"
@@ -99,6 +103,10 @@ import { commonStatuses } from '@/data/enums'
 import { useConfirm } from 'primevue/useconfirm'
 import CreateInventoryDialog from '@/views/inventories/components/CreateInventoryDialog.vue'
 import type { Inventory } from '@/types/inventory.interface'
+
+import { useUserStore } from '@/stores/user'
+
+const userStore = useUserStore()
 
 const { t } = useI18n()
 const confirm = useConfirm()
@@ -187,3 +195,8 @@ onMounted(() => {
   getUsers()
 })
 </script>
+
+<route lang="yaml">
+meta:
+  permissions: ['inventory.list']
+</route>

@@ -11,13 +11,15 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
-    "commit": "cz"
+    "commit": "cz",
+    "prepare": "husky"
   },
   "dependencies": {
     "@intlify/unplugin-vue-i18n": "^6.0.3",
     "@primevue/forms": "^4.2.5",
     "@primevue/themes": "^4.2.5",
     "axios": "^1.7.9",
+    "husky": "^9.1.7",
     "pinia": "^2.3.0",
     "primeicons": "^7.0.0",
     "primevue": "^4.2.5",

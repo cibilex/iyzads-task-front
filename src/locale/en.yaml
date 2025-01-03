@@ -1,4 +1,7 @@
 allUsers: All users
+home: Ana sayfa
+permissionItems: Sub permission count
+emptyTable: Data not found.
 users: Users
 location: Location
 active: Active

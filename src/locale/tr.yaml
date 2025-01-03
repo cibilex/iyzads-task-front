@@ -1,4 +1,7 @@
 allUsers: Tüm kullanıcılar
+home: Ana Sayfa
+permissionItems: Alt izin sayısı
+emptyTable: Veri bulunamadı.
 users: Kullanıcılar
 location: Lokasyon
 active: Aktif

@@ -5,13 +5,14 @@
         <Avatar /> <Divider class="mt-19px" />
 
         <div v-if="userStore.logined" class="flex gap-6 flex-col pt-14">
-          <Link
-            v-for="link in links"
-            :key="link.icon"
-            :text="link.text"
-            :icon="link.icon"
-            :to="link.link"
-          />
+          <template v-for="link in links" :key="link.icon">
+            <Link
+              v-if="userStore.controlPermission(link.permission)"
+              :text="link.text"
+              :icon="link.icon"
+              :to="link.link"
+            />
+          </template>
         </div></div
     ></template>
 
@@ -29,33 +30,39 @@ import { type RouteLocationRaw } from 'vue-router'
 import Avatar from '@/components/global/Avatar.vue'
 import { useUserStore } from '@/stores/user'
 const userStore = useUserStore()
-const links: { icon: string; text: string; link: RouteLocationRaw }[] = [
+const links: { icon: string; text: string; link: RouteLocationRaw; permission: string }[] = [
   {
     icon: 'i-tabler:photo-heart',
     text: 'inventories',
     link: { name: 'inventories' },
-  },
-  {
-    icon: 'i-tabler:photo-heart',
-    text: 'permissions',
-    link: { name: 'permissions' },
+    permission: 'inventory.list',
   },
   {
     icon: 'i-tabler:checkup-list',
     text: 'bookstores',
     link: { name: 'bookstores' },
+    permission: 'bookstore.list',
   },
   {
     icon: 'i-tabler:notebook',
     text: 'users',
     link: { name: 'users' },
+    permission: 'user.list',
   },
   {
     icon: 'i-tabler:photo-heart',
     text: 'books',
     link: { name: 'books' },
+    permission: 'book.list',
+  },
+  {
+    icon: 'i-tabler:photo-heart',
+    text: 'permissions',
+    link: { name: 'permissions' },
+    permission: 'permission.list',
   },
 ]
+
 const metaStore = useMetaStore()
 
 const { availableLocales } = useI18n()
