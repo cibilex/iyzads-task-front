@@ -1,14 +1,22 @@
 <template>
   <div class="flex flex-col gap-1">
     <FloatLabel variant="on">
-      <InputText
+      <Select
         :name="field"
-        :id="uniqueId"
+        v-model="model"
+        :options
+        filter
+        :optionValue
+        :optionLabel
+        :placeholder="t(label)"
         :invalid="form[field]?.invalid"
-        v-model.trim="model"
-        :type
-        fluid
-      />
+        class="w-full"
+      >
+        <template #option="{ option }">
+          <slot name="option" :option />
+        </template>
+      </Select>
+
       <label :for="uniqueId">{{ t(label) }}</label>
     </FloatLabel>
 
@@ -28,16 +36,18 @@ import { useI18n } from 'vue-i18n'
 import { v4 } from 'uuid'
 const uniqueId = v4()
 
-const model = defineModel() as ModelRef<string>
-const props = withDefaults(
+const model = defineModel() as ModelRef<number>
+withDefaults(
   defineProps<{
-    type?: string
     field: string
     form: any
     label: string
+    optionLabel?: string
+    options: { name: string; code: string }[]
+    optionValue?: string
   }>(),
   {
-    type: 'text',
+    optionLabel: 'name',
   },
 )
 const { t } = useI18n()

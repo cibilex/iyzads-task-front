@@ -7,6 +7,7 @@
       :initialValues="formData"
       class="flex flex-col gap-4 mt-3"
     >
+      <Loader v-if="loader" />
       <slot :$form="$form" />
       <div class="flex justify-end gap-2 mt-5">
         <Button
@@ -32,6 +33,7 @@ withDefaults(
     loading: boolean
     resolver: any
     formData: any
+    loader?: boolean
   }>(),
   {
     successBtn: 'buttons.save',

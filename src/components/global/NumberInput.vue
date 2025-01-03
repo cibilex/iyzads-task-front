@@ -2,12 +2,13 @@
   <div class="flex flex-col gap-1">
     <FloatLabel variant="on">
       <InputNumber
-        :minFractionDigits="2"
-        :maxFractionDigits="2"
+        :minFractionDigits
+        :maxFractionDigits
         fluid
         :name="field"
         :id="uniqueId"
         v-model="model"
+        :invalid="form[field]?.invalid"
       />
 
       <label :for="uniqueId">{{ t(label) }}</label>
@@ -30,11 +31,13 @@ import { v4 } from 'uuid'
 const uniqueId = v4()
 
 const model = defineModel() as ModelRef<number>
-const props = withDefaults(
+withDefaults(
   defineProps<{
     field: string
     form: any
     label: string
+    maxFractionDigits?: number
+    minFractionDigits?: number
   }>(),
   {},
 )

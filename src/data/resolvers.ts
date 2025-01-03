@@ -20,7 +20,7 @@ export const descriptionResolver = z
   .min(10, { message: 'validations.min' })
   .max(1000, { message: 'validations.max' })
 
-export const priceResolver = z.number().min(0.1, { message: 'validations.min' })
+export const priceResolver = z.number().min(0.1, { message: 'validations.minValue' })
 
 export const countryResolver = z
   .string()
@@ -31,3 +31,15 @@ export const cityResolver = z
   .string()
   .min(2, { message: 'validations.min' })
   .max(10, { message: 'validations.max' })
+
+export const quantityResolver = z
+  .number()
+  .int()
+  .min(1, { message: 'validations.minValue' })
+  .max(100000, { message: 'validations.maxValue' })
+
+export const intResolver = z
+  .number()
+  .int()
+  .min(1, { message: 'validations.required' })
+  .max(2147483647, { message: 'validations.maxValue' })

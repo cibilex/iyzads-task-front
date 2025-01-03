@@ -5,12 +5,14 @@ active: Aktif
 passive: Passive
 status: Durum
 price: Fiyat
+quantity: Miktar
 country: Ülke
 city: Şehir
 title: Başlık
 areYouSure: Emin misiniz?
 confirmToDeleteBook: Bu kitabı silmek istediğinizden emin misiniz?
 confirmToDeleteBookstore: Bu kitapçıyı silmek istediğinizden emin misiniz?
+confirmToDeleteInventory: Bu envanteri silmek istediğinizden emin misiniz?
 description: Açıklama
 website: Website
 userType: Kullanıcı tipi
@@ -33,7 +35,10 @@ error: Hata
 sucess: Başarılı
 completed: İşlem tamamlandı
 bookstores: Kitapçılar
+bookstore: Kitapçı
+inventories: Envanterler
 books: Kitaplar
+book: Kitap
 bookTitle: Kitap Adı
 bookstoreTitle: Kitaçı Adı
 permissions: İzinler
@@ -46,6 +51,7 @@ buttons:
   create: Oluştur
   createBook: Kitap Oluştur
   createBookstore: Kitapçı Oluştur
+  createInventory: Envanter oluştur
   delete: Sil
 
 validations:
@@ -53,3 +59,5 @@ validations:
   max: '{field} en fazla {maximum} karakter olmalıdır.'
   email: 'Geçerli bir e-posta adresi giriniz.'
   required: '{field} zorunludur.'
+  minValue: '{field} en az {minimum}  olmalıdır.'
+  maxValue: '{field} en fazla {maximum}  olmalıdır.'

@@ -5,12 +5,14 @@ active: Active
 passive: Passive
 status: Status
 price: Price
+quantity: Quantity
 country: Country
 city: City
 title: Title
 areYouSure: Are you sure?
 confirmToDeleteBook: Are you sure you want to delete this book?
 confirmToDeleteBookstore: Are you sure you want to delete this bookstore?
+confirmToDeleteInventory: Are you sure you want to delete this inventory?
 description: Description
 website: Website
 userType: User type
@@ -33,7 +35,10 @@ error: Error
 success: Success
 completed: Operation completed
 bookstores: Bookstores
+bookstore: Bookstore
+inventories: Inventories
 books: Books
+book: Book
 bookTitle: Book Title
 bookstoreTitle: Bookstore title
 permissions: Permissions
@@ -46,10 +51,12 @@ buttons:
   create: Create
   createBook: Create Book
   createBookstore: Create Book
+  createInventory: Create Inventory
   delete: Delete
 validations:
   min: '{field} must be at least {minimum} characters.'
-
   max: '{field} must be at most {maximum} characters.'
   email: 'Please enter a valid email address.'
   required: '{field} is required.'
+  minValue: '{field} must be bigger than least {minimum} .'
+  maxValue: '{field} must be lesser  {maximum} characters.'

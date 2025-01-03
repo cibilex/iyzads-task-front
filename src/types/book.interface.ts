@@ -1,10 +1,8 @@
-import type { CommonTableStatuses } from './common.types'
+import type { Base } from './base.interface'
 
-export interface Book {
-  id: number
+export interface Book extends Base {
   title: string
-  publicationDate: number
   description: string
   price: number
-  status: CommonTableStatuses
 }
+export type DenseBook = Pick<Book, 'id' | 'title' | 'price'>

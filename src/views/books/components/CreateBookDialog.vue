@@ -9,7 +9,14 @@
   >
     <template #default="{ $form }">
       <Input field="title" label="title" :form="$form" v-model="formData.title" />
-      <NumberInput field="price" label="price" :form="$form" v-model="formData.price" />
+      <NumberInput
+        :minFractionDigits="2"
+        :maxFractionDigits="2"
+        field="price"
+        label="price"
+        :form="$form"
+        v-model="formData.price"
+      />
 
       <Textarea
         field="description"
@@ -17,7 +24,6 @@
         :form="$form"
         v-model="formData.description"
       />
-      >
     </template>
   </CommonDialog>
 </template>

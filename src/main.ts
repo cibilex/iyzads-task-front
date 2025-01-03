@@ -49,7 +49,8 @@ import InputNumber from 'primevue/inputnumber'
 import NumberInput from '@/components/global/NumberInput.vue'
 import ConfirmDialog from 'primevue/confirmdialog'
 import ConfirmationService from 'primevue/confirmationservice'
-
+import Select from 'primevue/select'
+import SelectInput from '@/components/global/SelectInput.vue'
 const app = createApp(App)
 app
   .use(createPinia())
@@ -99,6 +100,8 @@ app
   .component('InputNumber', InputNumber)
   .component('NumberInput', NumberInput)
   .component('ConfirmDialog', ConfirmDialog)
+  .component('Select', Select)
+  .component('SelectInput', SelectInput)
   .use(i18n)
   .use(router)
 

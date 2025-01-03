@@ -33,7 +33,7 @@ export const useMetaStore = defineStore('meta', () => {
   }
 
   const safeRequest = async <T>(
-    method: 'get' | 'post' | 'delete',
+    method: 'get' | 'post' | 'delete' | 'put',
     url: string,
     payload?: Record<string, any>,
     info = true,

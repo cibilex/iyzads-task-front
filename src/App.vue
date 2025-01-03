@@ -31,6 +31,16 @@ import { useUserStore } from '@/stores/user'
 const userStore = useUserStore()
 const links: { icon: string; text: string; link: RouteLocationRaw }[] = [
   {
+    icon: 'i-tabler:photo-heart',
+    text: 'inventories',
+    link: { name: 'inventories' },
+  },
+  {
+    icon: 'i-tabler:photo-heart',
+    text: 'permissions',
+    link: { name: 'permissions' },
+  },
+  {
     icon: 'i-tabler:checkup-list',
     text: 'bookstores',
     link: { name: 'bookstores' },
@@ -39,11 +49,6 @@ const links: { icon: string; text: string; link: RouteLocationRaw }[] = [
     icon: 'i-tabler:notebook',
     text: 'users',
     link: { name: 'users' },
-  },
-  {
-    icon: 'i-tabler:photo-heart',
-    text: 'permissions',
-    link: { name: 'permissions' },
   },
   {
     icon: 'i-tabler:photo-heart',
